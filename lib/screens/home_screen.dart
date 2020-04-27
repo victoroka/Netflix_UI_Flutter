@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_ui/models/movie_model.dart';
+import 'package:netflix_ui/widgets/content_scroll.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -90,6 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        brightness: Brightness.light,
         backgroundColor: Colors.white,
         elevation: 0.0,
         title: Image(
@@ -167,7 +169,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   );
                 }),
           ),
-          SizedBox(height: 20.0)
+          SizedBox(height: 20.0),
+          ContentScroll(
+            images: myList,
+            title: 'My List',
+            imageHeight: 250.0,
+            imageWidth: 150.0,
+          ),
         ],
       ),
     );
