@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
         double value = 1;
         if (_pageController.position.haveDimensions) {
           value = _pageController.page - index;
-          value = (1 - (value.abs() * 0.3) + 0.6).clamp(0.0, 1.0);
+          value = (1 - (value.abs() * 0.3) + 0.06).clamp(0.0, 1.0);
         }
         return Center(
           child: SizedBox(
@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Center(
             child: Container(
               margin: EdgeInsets.symmetric(
-                horizontal: 10.0,
+                horizontal: 8.0,
                 vertical: 20.0,
               ),
               decoration: BoxDecoration(
@@ -65,6 +65,21 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
+          Positioned(
+            left: 30.0,
+            bottom: 40.0,
+            child: Container(
+              width: 250.0,
+              child: Text(
+                movies[index].title,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );
@@ -110,6 +125,49 @@ class _HomeScreenState extends State<HomeScreen> {
                   return _movieSelector(index);
                 }),
           ),
+          Container(
+            height: 90.0,
+            child: ListView.builder(
+                padding: EdgeInsets.symmetric(horizontal: 30.0),
+                scrollDirection: Axis.horizontal,
+                itemCount: labels.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return Container(
+                    margin: EdgeInsets.all(10.0),
+                    width: 160.0,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.0),
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          Color(0xFFD45253),
+                          Color(0xFF9E1F28),
+                        ],
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color(0xFF9E1F28),
+                          offset: Offset(0.0, 0.2),
+                          blurRadius: 6.0,
+                        ),
+                      ],
+                    ),
+                    child: Center(
+                      child: Text(
+                        labels[index].toUpperCase(),
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 1.8,
+                        ),
+                      ),
+                    ),
+                  );
+                }),
+          ),
+          SizedBox(height: 20.0)
         ],
       ),
     );
