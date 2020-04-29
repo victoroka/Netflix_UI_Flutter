@@ -7,7 +7,7 @@
 [Design Credit](https://dribbble.com/shots/5026483-Netflix-Mobile-App-Redesign/)
 
 
-![](screen.gif)
+![](gifs/screen.gif)
 
 ## Getting Started
 
