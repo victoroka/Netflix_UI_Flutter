@@ -6,6 +6,9 @@
 
 [Design Credit](https://dribbble.com/shots/5026483-Netflix-Mobile-App-Redesign/)
 
+
+![](screen.gif)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
